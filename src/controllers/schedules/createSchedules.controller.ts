@@ -5,7 +5,7 @@ import createSchedulesService from "../../services/schedules/createSchedules.ser
 const createSchedulesController = async (req: Request, res: Response) => {
   const { date, hour, propertyId } = req.body;
   const userId = req.user.id;
-  console.log(req.user.id);
+
   const schedules = await createSchedulesService({
     date,
     hour,

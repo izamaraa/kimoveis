@@ -12,8 +12,7 @@ class Category {
   id: string;
   @Column({ unique: true, nullable: false })
   name: string;
-  // @OneToMany(() => Properties, (properties) => properties.category)
-  // properties: Properties;
+
   @ManyToOne(() => Properties)
   properties: Properties;
   constructor() {

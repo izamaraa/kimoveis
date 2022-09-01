@@ -16,16 +16,10 @@ class Schedules {
   @CreateDateColumn({ nullable: false, type: "time" })
   hour: string;
 
-  // @ManyToOne(() => User, (user) => user.shedules)
-  // user: User;
   @ManyToOne(() => User, { eager: true, nullable: false })
-  // @JoinColumn({ name: "userId" })
   user: User;
 
-  // @ManyToOne(() => Propieties, (propieties) => propieties.shedules)
-  // propieties: Propieties;
   @ManyToOne(() => Properties, { eager: true, nullable: false })
-  // @JoinColumn({ name: "propertyId" })
   properties: Properties;
 
   constructor() {

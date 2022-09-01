@@ -6,7 +6,7 @@ import createcategoryService from "../../services/categories/createCategories.se
 const createCategoryController = async (req: Request, res: Response) => {
   try {
     const categoryBody = req.body;
-    console.log(req.headers.authorization);
+
     const category: ICategoryRequest = await createcategoryService(
       categoryBody
     );

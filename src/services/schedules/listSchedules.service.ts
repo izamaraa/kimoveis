@@ -1,6 +1,6 @@
 import AppDataSource from "../../data-source";
 import { Properties } from "../../entities/properties.entity";
-// import { Schedules } from "../../entities/shedules.entity";
+
 import { AppError } from "../../errors";
 
 const listSchedulesService = async (id: string) => {

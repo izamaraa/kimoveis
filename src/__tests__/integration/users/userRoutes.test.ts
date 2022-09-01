@@ -86,11 +86,11 @@ describe("/users", () => {
     const adminLoginResponse = await request(app)
       .post("/login")
       .send(mockedAdminLogin);
-    console.log(adminLoginResponse);
+
     const UserTobeDeleted = await request(app)
       .get("/users")
       .set("Authorization", `Bearer ${adminLoginResponse.body.token}`);
-    // console.log(UserTobeDeleted);
+
     const response = await request(app).delete(
       `/users/${UserTobeDeleted.body[0].id}`
     );
@@ -134,7 +134,7 @@ describe("/users", () => {
     const findUser = await request(app)
       .get("/users")
       .set("Authorization", `Bearer ${adminLoginResponse.body.token}`);
-    console.log(response);
+
     expect(response.status).toBe(204);
     expect(findUser.body[0].isActive).toBe(false);
   });

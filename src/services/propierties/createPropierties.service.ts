@@ -18,7 +18,7 @@ const createPropiertiesService = async ({
   const categoryExists = await categoryRepository.findOneBy({
     id: categoryId,
   });
-  console.log(categoryExists);
+
   if (!categoryExists) {
     throw new AppError(404, "category not found");
   }
@@ -31,9 +31,7 @@ const createPropiertiesService = async ({
   if (address.zipCode.length > 8) {
     throw new AppError(400, "invalid zipCode");
   }
-  // const stateExists = await addressesRepository.findOneBy({
-  //   state: address.state,
-  // });
+
   if (address.state.length !== 2) {
     throw new AppError(400, "invalid state");
   }
@@ -59,13 +57,6 @@ const createPropiertiesService = async ({
   }
   await addressesRepository.save(novoEnderco);
 
-  // const newPropierty = {
-
-  //   value,
-  //   size,
-  //   addresses: novoEnderco,
-  //   categories: categoryExists,
-  // };
   const propierty = propertiesRepository.create({
     value,
     size,

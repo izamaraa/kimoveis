@@ -13,6 +13,7 @@ schedulesRoutes.post(
 );
 schedulesRoutes.get(
   "/schedules/properties/:id",
+  authTokenMiddleware,
   authTokenAdmMiddleware,
   listSchedulesIdController
 );
